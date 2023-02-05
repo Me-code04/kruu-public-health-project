@@ -1,0 +1,18 @@
+Diesease,Hep a,Hep B,MMR,Tdap,Flu,Pneumococai,HPV,Covid
+ReportedAllergiesPostVaccine,0,0,0,0,0,0,0,0
+Asthma,0,1,1,1,1,1,1,1
+HTN,0,0,1,1,1,1,1,1
+LiverDisease,1,1,0,1,0,1,1,1
+Diabetes,0,1,1,1,1,1,1,1
+Allergies,0,0,0,1,1,0,0,1
+Pregnant,1,1,0,1,1,0,0,1
+BloodTransfusion,1,1,0,1,1,1,1,1
+MSM,1,1,1,1,1,1,1,1
+Immunocompromised,1,1,0,0,0,1,1,1
+Haemophilia,0,0,0,1,1,1,1,1
+Tubercolosis,0,0,0,1,1,1,1,1
+STDs,1,1,0,1,1,1,1,1
+SexuallyActive,1,1,0,1,1,1,1,1
+GBS,0,0,0,0,0,0,0,0
+Alcoholic,1,1,1,1,1,1,1,1
+Smoker,0,1,1,1,1,1,1,1
