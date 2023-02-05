@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from add_bg_from_local import *
 import streamlit as st
 import csv
