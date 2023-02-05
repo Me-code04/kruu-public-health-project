@@ -1,6 +1,7 @@
 from add_bg_from_local import *
 import streamlit as st
 import csv
+from AnalysisAndComparison import *
 
 def input_international():
     st.slider("Estimated frquency of travelling in a year:", 1, 12, 1, 1)
@@ -13,25 +14,35 @@ st.header("With no further ado, let's begin by ticking any of the following belo
 
 col1, col2 = st.columns(2)
 with col1:
-    st.checkbox("Any reported allergies after taking a vaccine")
-    st.checkbox("Asthma")
-    st.checkbox("Hypertension")
-    st.checkbox("Liver Disease")
-    st.checkbox("Diabetes")
-    st.checkbox("Allergies")
-    st.checkbox("Pregnant")
-    st.checkbox("Under blood transfusion")
+    ReportedAllergies=st.checkbox("Any reported allergies after taking a vaccine")
+    Asthma=st.checkbox("Asthma")
+    HTN=st.checkbox("Hypertension")
+    LiverDisease=st.checkbox("Liver Disease")
+    Diabetes=st.checkbox("Diabetes")
+    Allergies=st.checkbox("Allergies")
+    Pregnant=st.checkbox("Pregnant")
+    BloodTransfusion=st.checkbox("Under blood transfusion")
     st.checkbox("Senior Citizen")
 with col2:
-    st.checkbox("Men having sex with men (MSM)")
-    st.checkbox("Immunocompromised")
-    st.checkbox("Haemophilia")
-    st.checkbox("Tubercolosis (TB)")
-    st.checkbox("Any sexually transmitted disease (STDs)")
-    st.checkbox("Sexually active")
-    st.checkbox("GBS (Guillain-Barré Syndrome)")
-    st.checkbox("Alcoholic")
-    st.checkbox("Smoker")
+    MSM=st.checkbox("Men having sex with men (MSM)")
+    Immunocompromised=st.checkbox("Immunocompromised")
+    Haemophilia=st.checkbox("Haemophilia")
+    TB=st.checkbox("Tubercolosis (TB)")
+    STD=st.checkbox("Any sexually transmitted disease (STDs)")
+    SexActive=st.checkbox("Sexually active")
+    GBS=st.checkbox("GBS (Guillain-Barré Syndrome)")
+    Alcoholic=st.checkbox("Alcoholic")
+    Smoker=st.checkbox("Smoker")
+
+userCondtion =[ReportedAllergies,Asthma,HTN,LiverDisease,Diabetes,Allergies,Pregnant,BloodTransfusion,MSM,Immunocompromised,Haemophilia,TB,STD,SexActive,GBS,Alcoholic,Smoker]
+userCondtionNumerated = []
+for idx in range(len(userCondtion)):
+    if userCondtion[idx]:
+        userCondtionNumerated.append(1)
+    else:
+        userCondtionNumerated.append(0)
+
+factors = Compare(userCondtionNumerated)
 
 st.header("We also want to know about your travel history internationally!")
 st.markdown("Have you travelled internationally within the past 1 year?")

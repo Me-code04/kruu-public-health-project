@@ -1,9 +1,0 @@
-Disease,ReportedAllergiesPostVaccine,Asthma,HTN,LiverDisease,Diabetes,Allergies,Pregnant,BloodTransfusion,MSM,Immunocompromised,Haemophilia,Tubercolosis,STDs,SexuallyActive,GBS,Alcoholic,Smoker
-Hep a,0,0,0,1,0,0,1,1,1,1,0,0,1,1,0,1,0
-Hep B,0,1,0,1,1,0,1,1,1,1,0,0,1,1,0,1,1
-MMR,0,1,1,0,1,0,0,0,1,0,0,0,0,0,0,1,1
-Tdap,0,1,1,1,1,1,1,1,1,0,1,1,1,1,0,1,1
-Flu,0,1,1,0,1,1,1,1,1,0,1,1,1,1,0,1,1
-Pneumococai,0,1,1,1,1,0,0,1,1,1,1,1,1,1,0,1,1
-HPV,0,1,1,1,1,0,0,1,1,1,1,1,1,1,0,1,1
-Covid,0,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1

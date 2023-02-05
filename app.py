@@ -30,10 +30,10 @@ if (name != "") & (NIDorPP != "") & (cityORmunicipality != "") & (district != ""
 
         rows = [[NIDorPP, name, dateOfBirth, age, gender, cityORmunicipality, district]]
         # name of csv file
-        filename = "UserData.csv"
+        filename = "UserData.txt"
  
         # writing to csv file
-        with open(filename, 'w') as csvfile:
+        with open(filename, 'a') as csvfile:
             # creating a csv writer object
             csvwriter = csv.writer(csvfile)
      
