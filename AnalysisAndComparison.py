@@ -8,16 +8,15 @@ Pneumococai=[0,1,1,1,1,0,0,1,1,1,1,1,1,1,0,1,1]
 HPV=[0,1,1,1,1,0,0,1,1,1,1,1,1,1,0,1,1]
 Covid=[0,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1]
 
-NumConditionsMatchedHepA=0
-NumConditionsMatchedHepB=0
-NumConditionsMatchedMMR=0
-NumConditionsMatchedTdap=0
-NumConditionsMatchedFlu=0
-NumConditionsMatchedPneumococai=0
-NumConditionsMatchedHPV=0
-NumConditionsMatchedCovid=0
-
 def Compare(arrList):
+    NumConditionsMatchedHepA =0
+    NumConditionsMatchedHepB =0
+    NumConditionsMatchedMMR=0
+    NumConditionsMatchedTdap=0
+    NumConditionsMatchedFlu=0
+    NumConditionsMatchedPneumococai=0
+    NumConditionsMatchedHPV=0
+    NumConditionsMatchedCovid=0
     for index in range(len(arrList)):
         if arrList[index] == HepA[index]:
             NumConditionsMatchedHepA += 1

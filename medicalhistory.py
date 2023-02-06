@@ -1,6 +1,5 @@
 from add_bg_from_local import *
 import streamlit as st
-import csv
 from AnalysisAndComparison import *
 
 def input_international():
