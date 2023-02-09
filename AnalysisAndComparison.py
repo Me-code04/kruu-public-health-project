@@ -9,31 +9,25 @@ HPV=[0,1,1,1,1,0,0,1,1,1,1,1,1,1,0,1,1]
 Covid=[0,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1]
 
 def Compare(arrList):
-    NumConditionsMatchedHepA =0
-    NumConditionsMatchedHepB =0
-    NumConditionsMatchedMMR=0
-    NumConditionsMatchedTdap=0
-    NumConditionsMatchedFlu=0
-    NumConditionsMatchedPneumococai=0
-    NumConditionsMatchedHPV=0
-    NumConditionsMatchedCovid=0
+    conditionsMatched = [0,0,0,0,0,0,0,0]
     for index in range(len(arrList)):
         if arrList[index] == HepA[index]:
-            NumConditionsMatchedHepA += 1
+            conditionsMatched[0] += 1
         elif arrList[index] == HepB[index]:
-            NumConditionsMatchedHepB += 1
+            conditionsMatched[1] += 1
         elif arrList[index] == MMR[index]:
-            NumConditionsMatchedMMR += 1
+            conditionsMatched[2] += 1
         elif arrList[index] == Tdap[index]:
-            NumConditionsMatchedTdap += 1
+            conditionsMatched[3] += 1
         elif arrList[index] == Flu[index]:
-            NumConditionsMatchedFlu += 1
+            conditionsMatched[4] += 1
         elif arrList[index] == Pneumococai[index]:
-            NumConditionsMatchedPneumococai += 1
+            conditionsMatched[5] += 1
         elif arrList[index] == HPV[index]:
-            NumConditionsMatchedHPV += 1
+            conditionsMatched[6] += 1
         elif arrList[index] == Covid[index]:
-            NumConditionsMatchedCovid += 1
+            conditionsMatched[7] += 1
+
+    return conditionsMatched
  
-    ConditionsMatched = [NumConditionsMatchedHepA, NumConditionsMatchedHepB, NumConditionsMatchedMMR, NumConditionsMatchedTdap, NumConditionsMatchedFlu, NumConditionsMatchedPneumococai, NumConditionsMatchedHPV, NumConditionsMatchedCovid]
-    return ConditionsMatched
+    

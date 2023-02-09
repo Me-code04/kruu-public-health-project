@@ -45,7 +45,7 @@ factors = Compare(userCondtionNumerated)
 storageFile = open("UserVAXData.txt",'a')
 strFactor = ""
 for i in range(len(factors)):
-    strFactor += str(factors[i])+","
+    strFactor += " " + str(factors[i])
 storageFile.write(strFactor)
 
 st.header("We also want to know about your travel history internationally!")
