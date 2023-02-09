@@ -6,6 +6,14 @@ def input_international():
     st.slider("Estimated frquency of travelling in a year:", 1, 12, 1, 1)
     st.selectbox("Most frequently traveled region:", ["South Asia", "South East Asia", "North America", "Latin America", "South America", "East Asia", "Central Asia", "Russia", "Europe", "North Africa and Middle East", "Sub-Saharan Africa", "Australia", "Antartic"])
 
+def dataOutput():
+    storageFile = open("UserVAXData.txt",'a')
+    strFactor = ""
+    for i in range(len(factors)):
+        strFactor += " " + str(factors[i])
+    storageFile.write(strFactor)
+    storageFile.close()
+
 add_bg_from_local("vax8.jpg")
 st.title("Welcome to the Medical History section! :wave: ")
 st.subheader("Here, we want to know your medical condition before recommending any vaccination. In Sri Lanka :flag-lk:, we are dealing with a variety of diseases that you can be immuned from through vaccines. As adults, these diseases can be life-threatning and lead to a unhealthy life or death. ")
@@ -42,11 +50,7 @@ for idx in range(len(userCondtion)):
         userCondtionNumerated.append(0)
 
 factors = Compare(userCondtionNumerated)
-storageFile = open("UserVAXData.txt",'a')
-strFactor = ""
-for i in range(len(factors)):
-    strFactor += " " + str(factors[i])
-storageFile.write(strFactor)
+
 
 st.header("We also want to know about your travel history internationally!")
 st.markdown("Have you travelled internationally within the past 1 year?")
@@ -69,3 +73,5 @@ with col4:
 
 st.subheader("Thank you for writing your details! To continue, please click on the 'Complete' button below! :point_down:")
 complete = st.button("Complete!", key="beta23", help="You will go to the next section after this on click!")
+if complete:
+    dataOutput()

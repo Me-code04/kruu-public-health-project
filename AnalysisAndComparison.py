@@ -13,21 +13,19 @@ def Compare(arrList):
     for index in range(len(arrList)):
         if arrList[index] == HepA[index]:
             conditionsMatched[0] += 1
-        elif arrList[index] == HepB[index]:
+        if arrList[index] == HepB[index]:
             conditionsMatched[1] += 1
-        elif arrList[index] == MMR[index]:
+        if arrList[index] == MMR[index]:
             conditionsMatched[2] += 1
-        elif arrList[index] == Tdap[index]:
+        if arrList[index] == Tdap[index]:
             conditionsMatched[3] += 1
-        elif arrList[index] == Flu[index]:
+        if arrList[index] == Flu[index]:
             conditionsMatched[4] += 1
-        elif arrList[index] == Pneumococai[index]:
+        if arrList[index] == Pneumococai[index]:
             conditionsMatched[5] += 1
-        elif arrList[index] == HPV[index]:
+        if arrList[index] == HPV[index]:
             conditionsMatched[6] += 1
-        elif arrList[index] == Covid[index]:
+        if arrList[index] == Covid[index]:
             conditionsMatched[7] += 1
-
-    return conditionsMatched
  
-    
+    return conditionsMatched
