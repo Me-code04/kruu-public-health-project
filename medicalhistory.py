@@ -42,6 +42,11 @@ for idx in range(len(userCondtion)):
         userCondtionNumerated.append(0)
 
 factors = Compare(userCondtionNumerated)
+storageFile = open("UserVAXData.txt",'a')
+strFactor = ""
+for i in range(len(factors)):
+    strFactor += str(factors[i])+","
+storageFile.write(strFactor)
 
 st.header("We also want to know about your travel history internationally!")
 st.markdown("Have you travelled internationally within the past 1 year?")
