@@ -1,5 +1,6 @@
 from datetime import datetime, date
 import streamlit as st
+import csv
 
 def PersonalDataCollection():
     global name, dateOfBirth, gender, NIDorPP, cityORmunicipality, district
@@ -24,18 +25,18 @@ def CalculateAge():
 
 def StoringPersonalData():
     if (name != "") & (NIDorPP != "") & (cityORmunicipality != "") & (district != ""):
-    if gender:
-        st.subheader("Hi " + name + " ! :wave: Nice to have you here! Thank you for writing your details! To continue, please click on the 'Complete' button below! :point_down:")
-        complete = st.button("Complete!", key="alpha123", help="You will go to the next section after this on click!")
+        if gender:
+            st.subheader("Hi " + name + " ! :wave: Nice to have you here! Thank you for writing your details! To continue, please click on the 'Complete' button below! :point_down:")
+            complete = st.button("Complete!", key="alpha123", help="You will go to the next section after this on click!")
 
-        rows = [[NIDorPP, name, dateOfBirth, age, gender, cityORmunicipality, district]]
-        # name of csv file
-        filename = "UserData.txt"
+            rows = [[NIDorPP, name, dateOfBirth, age, gender, cityORmunicipality, district]]
+            # name of csv file
+            filename = "UserData.txt"
  
-        # writing to csv file
-        with open(filename, 'a') as csvfile:
-            # creating a csv writer object
-            csvwriter = csv.writer(csvfile)
+            # writing to csv file
+            with open(filename, 'a') as csvfile:
+                # creating a csv writer object
+                csvwriter = csv.writer(csvfile)
      
-            # writing the data rows
-            csvwriter.writerows(rows)
+                # writing the data rows
+                csvwriter.writerows(rows)
