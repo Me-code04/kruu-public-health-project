@@ -7,8 +7,8 @@ add_bg_from_local("black.jpg")
 
 FirstTransition = MessageDisplay()
 st.write(FirstTransition)
-if FirstTransition:
-    FirstTransition = True # preserve the info that you hit a button between runs
+if FirstTransition == True:
+    FirstTransition = True
     SecondTransition = PersonalDataCollection()
     CalculateAge()
     StoringPersonalData()

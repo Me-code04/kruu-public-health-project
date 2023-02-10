@@ -7,4 +7,5 @@ def MessageDisplay():
                Click below to input your details!""")
 
     Transition1 = st.button("Get Started")
-    return Transition1
+    if Transition1:
+        pass 
