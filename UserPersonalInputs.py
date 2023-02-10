@@ -18,6 +18,9 @@ def PersonalDataCollection():
     cityORmunicipality = st.text_input("Enter the city/municipality you are living in")
     district = st.text_input("Enter the district you are living in")
 
+    Transition2 = st.button("I have finished!")
+    return Transition2
+
     
 
 age = 0
