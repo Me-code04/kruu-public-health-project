@@ -1,20 +1,14 @@
 from add_bg_from_local import *
 import streamlit as st
 from AnalysisAndComparison import *
+from contents import *
 
 def input_international():
     st.slider("Estimated frquency of travelling in a year:", 1, 12, 1, 1)
     st.selectbox("Most frequently traveled region:", ["South Asia", "South East Asia", "North America", "Latin America", "South America", "East Asia", "Central Asia", "Russia", "Europe", "North Africa and Middle East", "Sub-Saharan Africa", "Australia", "Antartic"])
 
-def dataOutput():
-    storageFile = open("UserVAXData.txt",'a')
-    strFactor = ""
-    for i in range(len(factors)):
-        strFactor += " " + str(factors[i])
-    storageFile.write(strFactor)
-    storageFile.close()
-
 def medicalHistory():
+    global factors
     st.title("Welcome to the Medical History section! :wave: ")
     st.subheader("Here, we want to know your medical condition before recommending any vaccination. In Sri Lanka :flag-lk:, we are dealing with a variety of diseases that you can be immuned from through vaccines. As adults, these diseases can be life-threatning and lead to a unhealthy life or death. ")
     st.header("With no further ado, let's begin by ticking any of the following below based on your medical history! :point_down:")
@@ -71,8 +65,27 @@ def medicalHistory():
         st.checkbox("Tdap - Tetanus, Diphtheria, and Pertussiss")
         st.checkbox("Covid-19 (with Booster or not)")
 
-    st.subheader("Thank you for writing your details! To continue, please click on the 'Complete' button below! :point_down:")
-    complete = st.button("Complete!", key="beta23", help="You will go to the next section after this on click!")
-    if complete:
-        dataOutput()
-        return complete
+    st.subheader("Thank you for writing your details! :point_down:")
+    completeA = st.checkbox("My medical data provided is accurate upto my knowledge collected medically.")
+    completeB = st.button("Complete!", key="beta23", help="You will go to the next section after this on click!")
+    if completeA or completeB:
+        return completeA or completeB
+
+def OutputContent():
+    global factors
+    if int(factors[0]) > 5:
+        HepAContent()
+    if int(factors[1]) > 5:
+        HepBContent()
+    if int(factors[2]) > 5:
+        MMRContent()
+    if int(factors[3]) > 5:
+        TdapContent()
+    if int(factors[4]) > 5:
+        FluContent()
+    if int(factors[5]) > 5:
+        PneumococaiContent()
+    if int(factors[6]) > 5:
+        HPVContent()
+    if int(factors[7]) > 5:
+        CovidContent()

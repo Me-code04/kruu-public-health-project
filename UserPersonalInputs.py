@@ -18,11 +18,6 @@ def PersonalDataCollection():
     cityORmunicipality = st.text_input("Enter the city/municipality you are living in")
     district = st.text_input("Enter the district you are living in")
 
-    Transition2 = st.button("I have finished!")
-    return Transition2
-
-    
-
 age = 0
 def CalculateAge():
     today = date.today()
@@ -32,18 +27,11 @@ def StoringPersonalData():
     if (name != "") & (NIDorPP != "") & (cityORmunicipality != "") & (district != ""):
         if gender:
             st.subheader("Hi " + name + " ! :wave: Nice to have you here! Thank you for writing your details! To continue, please click on the 'Complete' button below! :point_down:")
-            Transition2 = st.button("I have finished!")
-            
-            rows = [[NIDorPP, name, dateOfBirth, age, gender, cityORmunicipality, district]]
-            # name of csv file
-            filename = "UserData.txt"
- 
-            # writing to csv file
-            with open(filename, 'a') as csvfile:
-                # creating a csv writer object
-                csvwriter = csv.writer(csvfile)
-     
-                # writing the data rows
-                csvwriter.writerows(rows)
-
-            return Transition2
+            TransitionA = st.checkbox("I have fill out my personal data properly!")
+            TransitionB = st.button("Complete")
+    
+            rows = NIDorPP+" "+name+" "+str(dateOfBirth)+" "+str(age)+" "+gender+" "+cityORmunicipality+" "+district
+            ThisFile = open("UserData.txt", 'w')
+            ThisFile.write(rows)
+            ThisFile.close()           
+            return (TransitionA or TransitionB)
