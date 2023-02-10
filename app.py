@@ -9,7 +9,7 @@ FirstTransition = MessageDisplay()
 if FirstTransition:
     PersonalDataCollection()
     CalculateAge()
-    StoringPersonalData()
-    SecondTransition = st.button("I have finished!")
+    SecondTransition = StoringPersonalData()
+    
     if SecondTransition:
         medicalHistory()

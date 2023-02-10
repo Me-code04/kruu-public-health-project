@@ -75,3 +75,4 @@ def medicalHistory():
     complete = st.button("Complete!", key="beta23", help="You will go to the next section after this on click!")
     if complete:
         dataOutput()
+        return complete
